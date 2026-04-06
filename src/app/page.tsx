@@ -140,7 +140,7 @@ function Navbar() {
             Services
           </a>
           <a
-            href="https://calendly.com"
+            href="https://calendly.com/jagrajsingh-au/30min"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm font-semibold text-amber-500 hover:text-amber-400 transition-colors"
@@ -450,7 +450,7 @@ function Offers() {
               </ul>
 
               <a
-                href="https://calendly.com"
+                href="https://calendly.com/jagrajsingh-au/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`mt-8 block w-full text-center px-6 py-4 text-sm font-bold tracking-wide uppercase rounded-lg transition-all duration-300 ${
@@ -594,7 +594,7 @@ function Footer() {
             LinkedIn
           </a>
           <a
-            href="https://calendly.com"
+            href="https://calendly.com/jagrajsingh-au/30min"
             target="_blank"
             rel="noopener noreferrer"
             className="text-slate-500 hover:text-cyan-400 text-sm transition-colors"
