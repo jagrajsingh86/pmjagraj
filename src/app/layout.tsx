@@ -13,13 +13,13 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Jag S. | AI Solutions Architect — Private AI for Mid-Market Leaders",
+  title: "Jag Singh AI | Private AI Architecture for Data-First Enterprises",
   description:
-    "Scale with AI. Keep your data private. Local-first AI architecture for Sydney-based mid-market firms. Book your $2,000 AI Readiness Audit today.",
+    "The efficiency of Generative AI. The security of Local-First systems. Built in Sydney. Book your $2,000 AI Readiness Audit today.",
   openGraph: {
-    title: "Jag S. | AI Solutions Architect",
+    title: "Jag Singh AI | AI Solutions Architect",
     description:
-      "Private, local-first AI implementation for mid-market CEOs. No data leaves your walls.",
+      "Private, local-first AI implementation for enterprises. No data leaves your walls.",
     type: "website",
     url: "https://www.pmjagraj.com",
   },
@@ -35,7 +35,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${playfair.variable} antialiased`}
     >
-      <body className="bg-white text-stone-900 font-sans">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
