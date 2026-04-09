@@ -1,0 +1,4 @@
+# Proxy /demo and all sub-paths to the Vercel-hosted demo app
+# Replace YOUR-VERCEL-URL.vercel.app with the actual Vercel deploy URL after deploying
+/demo            https://jag-singh-ai-demo.vercel.app/demo            200
+/demo/*          https://jag-singh-ai-demo.vercel.app/demo/:splat     200
