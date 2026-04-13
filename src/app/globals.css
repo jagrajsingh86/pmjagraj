@@ -2,11 +2,11 @@
 
 @theme inline {
   --font-sans: var(--font-inter);
-  --font-serif: var(--font-playfair);
-  --color-navy-950: #020617;
-  --color-navy-900: #0a1128;
-  --color-navy-800: #111d3a;
+  --color-obsidian: #020617;
+  --color-obsidian-light: #0a1128;
+  --color-amber-600: #d97706;
   --color-amber-500: #f59e0b;
+  --color-slate-500: #475569;
   --color-cyan-500: #06b6d4;
   --color-cyan-400: #22d3ee;
 }
@@ -24,7 +24,7 @@ body {
 }
 
 ::selection {
-  background-color: #f59e0b;
+  background-color: #d97706;
   color: #020617;
 }
 
@@ -49,12 +49,12 @@ body {
 }
 
 .glow-amber {
-  box-shadow: 0 0 20px rgba(245, 158, 11, 0.15), 0 0 60px rgba(245, 158, 11, 0.05);
+  box-shadow: 0 0 20px rgba(217, 119, 6, 0.2), 0 0 60px rgba(217, 119, 6, 0.08);
 }
 
 /* Gradient text */
 .text-gradient-amber {
-  background: linear-gradient(135deg, #f59e0b, #fbbf24);
+  background: linear-gradient(135deg, #d97706, #f59e0b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

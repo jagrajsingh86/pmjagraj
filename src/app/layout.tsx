@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -7,21 +7,16 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Jag Singh AI | Private AI Architecture for Data-First Enterprises",
+  title: "Jag Singh AI | Secure AI Systems for the Private Enterprise",
   description:
-    "The efficiency of Generative AI. The security of Local-First systems. Built in Sydney. Book your $2,000 AI Readiness Audit today.",
+    "Automated Lead Qualification. Local Document Intelligence. Zero Data Leaks. Built for Sydney's High-Stakes Businesses.",
   openGraph: {
-    title: "Jag Singh AI | AI Solutions Architect",
+    title: "Jag Singh AI | Secure AI Products",
     description:
-      "Private, local-first AI implementation for enterprises. No data leaves your walls.",
+      "SENTINEL. VAULT. REPLY. Three secure AI systems built for private enterprise.",
     type: "website",
-    url: "https://www.pmjagraj.com",
+    url: "https://jagsingh.ai",
   },
 };
 
@@ -31,10 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${playfair.variable} antialiased`}
-    >
+    <html lang="en" className={`${inter.variable} antialiased`}>
       <body>{children}</body>
     </html>
   );

@@ -72,7 +72,6 @@ function ParticleBackground() {
         if (p.y < 0 || p.y > h) p.vy *= -1;
       }
 
-      // draw connections
       const maxDist = 160;
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
@@ -91,7 +90,6 @@ function ParticleBackground() {
         }
       }
 
-      // draw dots
       for (const p of particles) {
         ctx.beginPath();
         ctx.arc(p.x, p.y, 1.5, 0, Math.PI * 2);
@@ -123,29 +121,33 @@ function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass">
       <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
-        <a href="#" className="font-serif text-xl text-white tracking-wide">
-          Jag Singh
+        <a href="#" className="text-lg font-bold text-white tracking-tight">
+          Jag Singh AI
         </a>
         <div className="flex items-center gap-8">
           <a
-            href="#privacy"
+            href="#systems"
             className="text-sm text-slate-400 hover:text-cyan-400 transition-colors"
           >
-            About
+            Systems
           </a>
           <a
-            href="#audit"
+            href="#security"
             className="text-sm text-slate-400 hover:text-cyan-400 transition-colors"
           >
-            Services
+            Security
           </a>
           <a
-            href="https://calendly.com/jagrajsingh-au/30min"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#pricing"
+            className="text-sm text-slate-400 hover:text-cyan-400 transition-colors"
+          >
+            Pricing
+          </a>
+          <a
+            href="#systems"
             className="text-sm font-semibold text-amber-500 hover:text-amber-400 transition-colors"
           >
-            Book a Call
+            View Solutions
           </a>
         </div>
       </div>
@@ -167,7 +169,7 @@ function Hero() {
         >
           <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
           <span className="text-xs tracking-widest uppercase text-slate-400">
-            AI Solutions Architect &middot; Sydney
+            Boutique AI Product Company &middot; Sydney
           </span>
         </motion.div>
 
@@ -176,11 +178,11 @@ function Hero() {
           initial="hidden"
           animate="visible"
           custom={1}
-          className="font-serif text-5xl md:text-6xl lg:text-7xl font-medium leading-tight tracking-tight text-white"
+          className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight text-white"
         >
-          AI Architecture for the
+          Secure AI Systems for the
           <br />
-          <span className="text-gradient-amber">Data-First Enterprise.</span>
+          <span className="text-gradient-amber">Private Enterprise.</span>
         </motion.h1>
 
         <motion.p
@@ -190,8 +192,8 @@ function Hero() {
           custom={2}
           className="mt-6 text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed"
         >
-          The efficiency of Generative AI. The security of Local-First systems.
-          Built in Sydney.
+          Automated Lead Qualification. Local Document Intelligence.
+          Zero Data Leaks. Built for Sydney&rsquo;s High-Stakes Businesses.
         </motion.p>
 
         <motion.div
@@ -202,182 +204,77 @@ function Hero() {
           className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
         >
           <a
-            href="#audit"
-            className="group relative inline-flex items-center justify-center px-8 py-4 bg-amber-500 text-navy-950 text-sm font-bold tracking-wide uppercase rounded-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(245,158,11,0.3)]"
+            href="#systems"
+            className="group relative inline-flex items-center justify-center px-8 py-4 bg-[#d97706] text-[#020617] text-sm font-bold tracking-wide uppercase rounded-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(217,119,6,0.35)]"
           >
-            Book Your AI Audit
+            Explore Our Systems
           </a>
           <a
-            href="#privacy"
+            href="#security"
             className="inline-flex items-center justify-center px-8 py-4 rounded-lg text-sm font-semibold tracking-wide uppercase text-slate-300 glass hover:border-cyan-500/30 transition-all duration-300 hover:shadow-[0_0_20px_rgba(6,182,212,0.1)]"
           >
             See How It Works
           </a>
         </motion.div>
 
-        {/* Decorative glow */}
         <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-cyan-500/5 blur-[120px] pointer-events-none" />
       </div>
     </section>
   );
 }
 
-/* ─── 2. THE PRIVACY WALL ─────────────────────────────────── */
-function PrivacyWall() {
-  const layers = [
+/* ─── 2. PRODUCT LINEUP ──────────────────────────────────── */
+function ProductLineup() {
+  const systems = [
     {
-      label: "Your Data",
-      desc: "Proprietary documents, client records, strategic plans",
-      color: "text-amber-500",
-      border: "border-amber-500/20",
+      code: "SYSTEM A",
+      name: "SENTINEL",
+      subtitle: "Real Estate Lead Responder",
+      desc: "24/7 AI-powered lead qualification that never sleeps. Every inbound enquiry is triaged, scored, and booked into your calendar before your competitor hits reply.",
+      features: [
+        "Instant lead response (<60 sec)",
+        "Intelligent qualification & scoring",
+        "Google Calendar integration",
+        "CRM sync (HubSpot, Salesforce, custom)",
+        "Multilingual support (EN, 中文, हिन्दी)",
+        "White-labelled to your brand",
+      ],
+      accent: "amber",
     },
     {
-      label: "Local LLM Layer",
-      desc: "Llama 3, Mistral & fine-tuned models running on Apple Silicon",
-      color: "text-cyan-400",
-      border: "border-cyan-500/20",
+      code: "SYSTEM B",
+      name: "VAULT",
+      subtitle: "Local-First AI Hub",
+      desc: "Secure internal RAG and private document processing. Your contracts, policies, and strategic plans — searchable by AI, accessible only on your hardware.",
+      features: [
+        "100% on-premise — zero cloud leakage",
+        "Document ingestion (PDF, DOCX, email)",
+        "Natural-language internal search",
+        "Role-based access controls",
+        "Apple Silicon & NVIDIA optimised",
+        "Custom fine-tuned models available",
+      ],
+      accent: "cyan",
     },
     {
-      label: "AI Agent Layer",
-      desc: "Custom agents for document analysis, lead triage, internal search",
-      color: "text-cyan-400",
-      border: "border-cyan-500/20",
-    },
-    {
-      label: "Firewall",
-      desc: "Zero data transmitted to external APIs or cloud LLMs",
-      color: "text-red-400",
-      border: "border-red-500/20",
+      code: "SYSTEM C",
+      name: "REPLY",
+      subtitle: "Allied Health Missed Call Text-Back",
+      desc: "Instant patient recovery for physios, dentists, and clinics. Every missed call triggers an intelligent SMS within seconds — reducing no-shows and recovering lost bookings.",
+      features: [
+        "Missed-call detection (<10 sec response)",
+        "Smart SMS with booking link",
+        "Practice management integration",
+        "After-hours auto-responder",
+        "Appointment confirmation follow-ups",
+        "HIPAA-conscious data handling",
+      ],
+      accent: "cyan",
     },
   ];
 
   return (
-    <section id="privacy" className="relative py-24 md:py-32 px-6">
-      <div className="relative z-10 max-w-5xl mx-auto">
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          <p className="text-sm tracking-widest uppercase text-cyan-400 mb-3">
-            The Privacy Wall
-          </p>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-white leading-tight">
-            Your data never leaves
-            <br />
-            <span className="text-gradient-amber">your four walls.</span>
-          </h2>
-          <p className="mt-4 text-slate-400 text-lg max-w-2xl leading-relaxed">
-            Most businesses pipe their most sensitive data into public LLMs.
-            My architecture keeps everything on-premise &mdash; zero leakage,
-            full control.
-          </p>
-        </motion.div>
-
-        {/* Architecture Diagram */}
-        <div className="mt-16 grid md:grid-cols-2 gap-6">
-          {layers.map((l, i) => (
-            <motion.div
-              key={l.label}
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              custom={i}
-              className={`glass-strong rounded-xl p-6 border ${l.border} hover:glow-cyan transition-shadow duration-500`}
-            >
-              <div className="flex items-start gap-4">
-                <div className={`mt-1 w-3 h-3 rounded-full ${l.color === "text-amber-500" ? "bg-amber-500" : l.color === "text-red-400" ? "bg-red-400" : "bg-cyan-400"} shrink-0`} />
-                <div>
-                  <h3 className={`font-semibold text-lg ${l.color}`}>
-                    {l.label}
-                  </h3>
-                  <p className="mt-1 text-slate-400 text-sm leading-relaxed">
-                    {l.desc}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Blocked Cloud */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          custom={4}
-          className="mt-8 glass-strong rounded-xl p-6 border border-red-500/10 text-center"
-        >
-          <p className="text-slate-500 text-sm uppercase tracking-widest mb-1">
-            External Cloud LLMs
-          </p>
-          <p className="text-red-400 font-bold text-lg">
-            Blocked &mdash; No data transmitted
-          </p>
-        </motion.div>
-      </div>
-    </section>
-  );
-}
-
-/* ─── 3. THE OFFERS ───────────────────────────────────────── */
-function Offers() {
-  const offers = [
-    {
-      tag: "Most Popular",
-      title: "The AI Readiness Audit",
-      price: "$2,000",
-      priceSub: "one-off",
-      desc: "2-hour deep-dive + architecture blueprint",
-      features: [
-        "2-hour strategy session (recorded)",
-        "Full data-privacy risk assessment",
-        "Custom Local-First AI blueprint",
-        "Hardware & model recommendations",
-        "30-day post-audit email support",
-      ],
-      cta: "Book Your Audit",
-      highlight: true,
-    },
-    {
-      tag: "Ongoing",
-      title: "The Fractional Architect",
-      price: "$1,500",
-      priceSub: "/month",
-      desc: "Your AI architect on retainer",
-      features: [
-        "4 hours/month advisory",
-        "Ongoing architecture support",
-        "Workflow design & maintenance",
-        "Priority async access",
-        "Monthly progress reviews",
-      ],
-      cta: "Get Started",
-      highlight: false,
-    },
-    {
-      tag: "Automation",
-      title: "Instant Lead Responder",
-      price: "$1,000",
-      priceSub: "setup + $199/mo",
-      desc: "24/7 automated lead qualification",
-      features: [
-        "AI agent built for your pipeline",
-        "24/7 lead qualification",
-        "CRM integration",
-        "Custom response templates",
-        "Monthly performance reporting",
-      ],
-      cta: "Automate Leads",
-      highlight: false,
-    },
-  ];
-
-  return (
-    <section id="audit" className="relative py-24 md:py-32 px-6">
+    <section id="systems" className="relative py-24 md:py-32 px-6">
       <div className="relative z-10 max-w-6xl mx-auto">
         <motion.div
           variants={fadeUp}
@@ -386,62 +283,392 @@ function Offers() {
           viewport={{ once: true, amount: 0.3 }}
           className="text-center"
         >
-          <p className="text-sm tracking-widest uppercase text-amber-500 mb-3">
-            The Offers
+          <p className="text-sm tracking-widest uppercase text-[#d97706] mb-3">
+            Product Lineup
           </p>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-white leading-tight">
-            Three ways to start.
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
+            Three systems. Zero data leaks.
           </h2>
           <p className="mt-4 text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
-            Whether you need a one-time blueprint, an ongoing architect, or
-            instant automation &mdash; there&rsquo;s a path built for you.
+            Each system is purpose-built, deployable in weeks, and runs
+            on infrastructure you control.
           </p>
         </motion.div>
 
         <div className="mt-16 grid lg:grid-cols-3 gap-6">
-          {offers.map((o, i) => (
+          {systems.map((s, i) => (
             <motion.div
-              key={o.title}
+              key={s.name}
               variants={fadeUp}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
               custom={i}
               className={`relative glass-strong rounded-2xl p-8 border transition-shadow duration-500 flex flex-col ${
-                o.highlight
-                  ? "border-amber-500/20 hover:glow-amber"
+                s.accent === "amber"
+                  ? "border-[#d97706]/20 hover:glow-amber"
                   : "border-white/5 hover:glow-cyan"
               }`}
             >
-              {/* Tag */}
               <span
-                className={`inline-block self-start text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-6 ${
-                  o.highlight
-                    ? "bg-amber-500/10 text-amber-500"
+                className={`inline-block self-start text-[10px] font-bold tracking-[0.2em] uppercase px-3 py-1 rounded-full mb-4 ${
+                  s.accent === "amber"
+                    ? "bg-[#d97706]/10 text-[#d97706]"
                     : "bg-cyan-500/10 text-cyan-400"
                 }`}
               >
-                {o.tag}
+                {s.code}
               </span>
 
-              <h3 className="font-serif text-2xl font-medium text-white mb-2">
-                {o.title}
+              <h3 className="text-3xl font-bold text-white tracking-tight mb-1">
+                {s.name}
               </h3>
-              <p className="text-slate-400 text-sm mb-6">{o.desc}</p>
-
-              <p className="font-serif text-4xl font-medium text-white mb-1">
-                {o.price}
-                <span className="text-base text-slate-500 font-sans ml-2">
-                  {o.priceSub}
-                </span>
+              <p
+                className={`text-sm font-medium mb-4 ${
+                  s.accent === "amber" ? "text-[#d97706]" : "text-cyan-400"
+                }`}
+              >
+                {s.subtitle}
+              </p>
+              <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                {s.desc}
               </p>
 
-              <ul className="mt-6 space-y-3 text-slate-300 text-sm flex-1">
-                {o.features.map((f) => (
+              <ul className="space-y-3 text-slate-300 text-sm flex-1">
+                {s.features.map((f) => (
                   <li key={f} className="flex items-start gap-3">
                     <span
-                      className={`mt-1 block w-1.5 h-1.5 rounded-full shrink-0 ${
-                        o.highlight ? "bg-amber-500" : "bg-cyan-400"
+                      className={`mt-1.5 block w-1.5 h-1.5 rounded-full shrink-0 ${
+                        s.accent === "amber" ? "bg-[#d97706]" : "bg-cyan-400"
+                      }`}
+                    />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href="#pricing"
+                className={`mt-8 block w-full text-center px-6 py-4 text-sm font-bold tracking-wide uppercase rounded-lg transition-all duration-300 ${
+                  s.accent === "amber"
+                    ? "bg-[#d97706] text-[#020617] hover:shadow-[0_0_30px_rgba(217,119,6,0.3)]"
+                    : "glass border border-cyan-500/20 text-cyan-400 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)]"
+                }`}
+              >
+                See Product Specs
+              </a>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#d97706]/5 blur-[150px] pointer-events-none" />
+    </section>
+  );
+}
+
+/* ─── 3. SECURITY FIRST ──────────────────────────────────── */
+function SecurityFirst() {
+  const stack = [
+    {
+      label: "Your Hardware",
+      desc: "Mac Studio, on-premise GPU server, or secure cloud VM — you own the metal",
+      color: "text-[#d97706]",
+      dot: "bg-[#d97706]",
+      border: "border-[#d97706]/20",
+    },
+    {
+      label: "Local LLM Runtime",
+      desc: "Llama 3, Mistral, Phi-3 & custom fine-tunes running on Apple Silicon or CUDA",
+      color: "text-cyan-400",
+      dot: "bg-cyan-400",
+      border: "border-cyan-500/20",
+    },
+    {
+      label: "Private RAG Pipeline",
+      desc: "Embedding, vector storage, and retrieval — all local. No API calls leave the network",
+      color: "text-cyan-400",
+      dot: "bg-cyan-400",
+      border: "border-cyan-500/20",
+    },
+    {
+      label: "AI Agent Layer",
+      desc: "Task-specific agents for lead triage, document Q&A, and workflow automation",
+      color: "text-cyan-400",
+      dot: "bg-cyan-400",
+      border: "border-cyan-500/20",
+    },
+  ];
+
+  const comparison = [
+    {
+      label: "Data residency",
+      public: "US/EU data centres (unknown)",
+      jsa: "Your premises or your chosen DC",
+    },
+    {
+      label: "Model training",
+      public: "Your data may train their model",
+      jsa: "Your data never leaves your wall",
+    },
+    {
+      label: "Compliance",
+      public: "Shared responsibility, vague SLAs",
+      jsa: "Full control, auditable, local logs",
+    },
+    {
+      label: "Cost trajectory",
+      public: "Per-token pricing, scales with usage",
+      jsa: "Fixed hardware + licensing, predictable",
+    },
+    {
+      label: "Customisation",
+      public: "Prompt engineering only",
+      jsa: "Fine-tuned models + custom agents",
+    },
+  ];
+
+  return (
+    <section id="security" className="relative py-24 md:py-32 px-6">
+      <div className="relative z-10 max-w-5xl mx-auto">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <p className="text-sm tracking-widest uppercase text-cyan-400 mb-3">
+            Security First
+          </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
+            Your data never leaves
+            <br />
+            <span className="text-gradient-amber">your four walls.</span>
+          </h2>
+          <p className="mt-4 text-slate-400 text-lg max-w-2xl leading-relaxed">
+            Every system we ship runs on infrastructure you control.
+            No tokens sent to OpenAI. No embeddings stored on someone
+            else&rsquo;s cloud. Full sovereignty.
+          </p>
+        </motion.div>
+
+        {/* Stack Diagram */}
+        <div className="mt-16 grid md:grid-cols-2 gap-5">
+          {stack.map((s, i) => (
+            <motion.div
+              key={s.label}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              custom={i}
+              className={`glass-strong rounded-xl p-6 border ${s.border} hover:glow-cyan transition-shadow duration-500`}
+            >
+              <div className="flex items-start gap-4">
+                <div className={`mt-1 w-3 h-3 rounded-full ${s.dot} shrink-0`} />
+                <div>
+                  <h3 className={`font-semibold text-lg ${s.color}`}>
+                    {s.label}
+                  </h3>
+                  <p className="mt-1 text-slate-400 text-sm leading-relaxed">
+                    {s.desc}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Blocked Cloud Banner */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          custom={4}
+          className="mt-5 glass-strong rounded-xl p-6 border border-red-500/10 text-center"
+        >
+          <p className="text-slate-500 text-sm uppercase tracking-widest mb-1">
+            External Cloud LLMs
+          </p>
+          <p className="text-red-400 font-bold text-lg">
+            Blocked &mdash; No data transmitted
+          </p>
+        </motion.div>
+
+        {/* Comparison Table */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          custom={5}
+          className="mt-16"
+        >
+          <h3 className="text-xl font-bold text-white mb-6 text-center">
+            Public AI vs. Jag Singh AI
+          </h3>
+          <div className="glass-strong rounded-2xl border border-white/5 overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="text-left text-[11px] uppercase tracking-wider border-b border-white/10">
+                    <th className="px-6 py-4 font-medium text-slate-400 w-1/3" />
+                    <th className="px-6 py-4 font-medium text-red-400">
+                      Public AI (Risk)
+                    </th>
+                    <th className="px-6 py-4 font-medium text-cyan-400">
+                      Jag Singh AI (Secure)
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {comparison.map((row, i) => (
+                    <tr
+                      key={row.label}
+                      className={`border-b border-white/5 ${
+                        i % 2 === 0 ? "bg-white/[0.02]" : ""
+                      }`}
+                    >
+                      <td className="px-6 py-4 text-white font-medium">
+                        {row.label}
+                      </td>
+                      <td className="px-6 py-4 text-slate-400">{row.public}</td>
+                      <td className="px-6 py-4 text-slate-200">{row.jsa}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── 4. TRANSPARENT PRICING ─────────────────────────────── */
+function Pricing() {
+  const products = [
+    {
+      name: "SENTINEL",
+      subtitle: "Real Estate Lead Responder",
+      setup: "$2,500",
+      monthly: "$499",
+      includes: [
+        "Full AI agent build & deployment",
+        "CRM + calendar integration",
+        "Branded response templates",
+        "Monthly performance report",
+        "Priority email & Slack support",
+      ],
+      accent: "amber",
+    },
+    {
+      name: "VAULT",
+      subtitle: "Local-First AI Hub",
+      setup: "$5,000",
+      monthly: "$799",
+      includes: [
+        "Hardware spec & procurement guidance",
+        "Local LLM + RAG pipeline setup",
+        "Document ingestion pipeline",
+        "Role-based access configuration",
+        "Quarterly model tuning review",
+      ],
+      accent: "cyan",
+    },
+    {
+      name: "REPLY",
+      subtitle: "Missed Call Text-Back",
+      setup: "$1,500",
+      monthly: "$299",
+      includes: [
+        "Missed-call detection integration",
+        "Smart SMS template build",
+        "Practice management hookup",
+        "After-hours auto-responder",
+        "Monthly conversion report",
+      ],
+      accent: "cyan",
+    },
+  ];
+
+  return (
+    <section id="pricing" className="relative py-24 md:py-32 px-6">
+      <div className="relative z-10 max-w-6xl mx-auto">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="text-center"
+        >
+          <p className="text-sm tracking-widest uppercase text-[#d97706] mb-3">
+            Transparent Pricing
+          </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
+            No hidden fees. No per-token surprises.
+          </h2>
+          <p className="mt-4 text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
+            One-off implementation fee + predictable monthly licensing.
+            Scale without the meter running.
+          </p>
+        </motion.div>
+
+        <div className="mt-16 grid lg:grid-cols-3 gap-6">
+          {products.map((p, i) => (
+            <motion.div
+              key={p.name}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              custom={i}
+              className={`glass-strong rounded-2xl p-8 border flex flex-col transition-shadow duration-500 ${
+                p.accent === "amber"
+                  ? "border-[#d97706]/20 hover:glow-amber"
+                  : "border-white/5 hover:glow-cyan"
+              }`}
+            >
+              <h3 className="text-2xl font-bold text-white tracking-tight">
+                {p.name}
+              </h3>
+              <p
+                className={`text-sm font-medium mb-6 ${
+                  p.accent === "amber" ? "text-[#d97706]" : "text-cyan-400"
+                }`}
+              >
+                {p.subtitle}
+              </p>
+
+              <div className="flex items-baseline gap-4 mb-2">
+                <div>
+                  <p className="text-3xl font-bold text-white">{p.setup}</p>
+                  <p className="text-xs text-slate-500 uppercase tracking-wider">
+                    Implementation
+                  </p>
+                </div>
+                <span className="text-slate-600 text-lg">+</span>
+                <div>
+                  <p className="text-3xl font-bold text-white">
+                    {p.monthly}
+                    <span className="text-base text-slate-500 font-normal">
+                      /mo
+                    </span>
+                  </p>
+                  <p className="text-xs text-slate-500 uppercase tracking-wider">
+                    Licensing
+                  </p>
+                </div>
+              </div>
+
+              <ul className="mt-6 space-y-3 text-slate-300 text-sm flex-1">
+                {p.includes.map((f) => (
+                  <li key={f} className="flex items-start gap-3">
+                    <span
+                      className={`mt-1.5 block w-1.5 h-1.5 rounded-full shrink-0 ${
+                        p.accent === "amber" ? "bg-[#d97706]" : "bg-cyan-400"
                       }`}
                     />
                     {f}
@@ -454,57 +681,32 @@ function Offers() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`mt-8 block w-full text-center px-6 py-4 text-sm font-bold tracking-wide uppercase rounded-lg transition-all duration-300 ${
-                  o.highlight
-                    ? "bg-amber-500 text-navy-950 hover:shadow-[0_0_30px_rgba(245,158,11,0.3)]"
+                  p.accent === "amber"
+                    ? "bg-[#d97706] text-[#020617] hover:shadow-[0_0_30px_rgba(217,119,6,0.3)]"
                     : "glass border border-cyan-500/20 text-cyan-400 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)]"
                 }`}
               >
-                {o.cta}
+                Get Started
               </a>
             </motion.div>
           ))}
         </div>
       </div>
 
-      {/* Decorative glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-amber-500/5 blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#d97706]/5 blur-[150px] pointer-events-none" />
     </section>
   );
 }
 
-/* ─── 4. SOCIAL PROOF ─────────────────────────────────────── */
-function SocialProof() {
+/* ─── 5. FOUNDER BACKGROUND ──────────────────────────────── */
+function Founder() {
   const credentials = [
-    {
-      value: "15+",
-      label: "Years Delivery",
-      accent: "text-gradient-amber",
-    },
-    {
-      value: "AI Architect",
-      label: "Product Delivery",
-      accent: "text-gradient-cyan",
-    },
-    {
-      value: "LLMOps",
-      label: "Specialist",
-      accent: "text-gradient-cyan",
-    },
-    {
-      value: "MBA",
-      label: "University of Illinois Urbana-Champaign",
-      accent: "text-gradient-amber",
-    },
-    {
-      value: "SAFe",
-      label: "Certified",
-      accent: "text-gradient-cyan",
-    },
-    {
-      value: "PMP",
-      label: "Certified",
-      accent: "text-gradient-amber",
-    },
+    { value: "15+", label: "Years Enterprise Delivery", accent: "text-gradient-amber" },
+    { value: "MBA", label: "University of Illinois Urbana-Champaign", accent: "text-gradient-amber" },
+    { value: "GenAI", label: "Architecture & LLMOps", accent: "text-gradient-cyan" },
+    { value: "SAFe", label: "Certified Agilist", accent: "text-gradient-cyan" },
+    { value: "PMP", label: "Certified", accent: "text-gradient-amber" },
+    { value: "AI Architect", label: "Product Delivery", accent: "text-gradient-cyan" },
   ];
 
   return (
@@ -518,21 +720,22 @@ function SocialProof() {
           className="text-center mb-16"
         >
           <p className="text-sm tracking-widest uppercase text-cyan-400 mb-3">
-            Credentials
+            The Builder
           </p>
-          <h2 className="font-serif text-3xl md:text-4xl font-medium text-white leading-tight">
-            Not another AI hype merchant.
+          <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
+            Chief Architect & Founder
           </h2>
           <p className="mt-4 text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
-            Enterprise delivery experience. Real architecture. Real results.
+            Every system carries 15 years of enterprise delivery discipline.
+            Jag Singh doesn&rsquo;t just advise &mdash; he architects, builds,
+            and ships.
           </p>
         </motion.div>
 
-        {/* Top row: 3 items */}
-        <div className="grid sm:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-3 gap-5">
           {credentials.slice(0, 3).map((c, i) => (
             <motion.div
-              key={c.value}
+              key={c.value + c.label}
               variants={fadeUp}
               initial="hidden"
               whileInView="visible"
@@ -540,7 +743,7 @@ function SocialProof() {
               custom={i}
               className="glass-strong rounded-xl p-8 text-center border border-white/5 hover:glow-cyan transition-shadow duration-500"
             >
-              <p className={`font-serif text-4xl md:text-5xl font-medium ${c.accent}`}>
+              <p className={`text-4xl md:text-5xl font-bold ${c.accent}`}>
                 {c.value}
               </p>
               <p className="mt-3 text-slate-400 text-sm tracking-widest uppercase">
@@ -550,11 +753,10 @@ function SocialProof() {
           ))}
         </div>
 
-        {/* Bottom row: 3 items */}
-        <div className="mt-6 grid sm:grid-cols-3 gap-6">
+        <div className="mt-5 grid sm:grid-cols-3 gap-5">
           {credentials.slice(3).map((c, i) => (
             <motion.div
-              key={c.value}
+              key={c.value + c.label}
               variants={fadeUp}
               initial="hidden"
               whileInView="visible"
@@ -562,7 +764,7 @@ function SocialProof() {
               custom={i}
               className="glass-strong rounded-xl p-8 text-center border border-white/5 hover:glow-cyan transition-shadow duration-500"
             >
-              <p className={`font-serif text-4xl md:text-5xl font-medium ${c.accent}`}>
+              <p className={`text-4xl md:text-5xl font-bold ${c.accent}`}>
                 {c.value}
               </p>
               <p className="mt-3 text-slate-400 text-sm tracking-widest uppercase">
@@ -576,7 +778,42 @@ function SocialProof() {
   );
 }
 
-/* ─── 5. FOOTER ───────────────────────────────────────────── */
+/* ─── 6. LIVE DEMO CTA ───────────────────────────────────── */
+function DemoCta() {
+  return (
+    <section className="relative py-16 px-6">
+      <div className="relative z-10 max-w-3xl mx-auto">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="glass-strong rounded-2xl border border-[#d97706]/20 p-10 text-center hover:glow-amber transition-shadow duration-500"
+        >
+          <p className="text-sm tracking-widest uppercase text-[#d97706] mb-3">
+            See It In Action
+          </p>
+          <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight mb-4">
+            Try SENTINEL — Live Demo
+          </h2>
+          <p className="text-slate-400 text-sm leading-relaxed max-w-lg mx-auto mb-8">
+            Chat with an AI property concierge trained on real Sydney listings.
+            Compare properties side-by-side. Switch languages mid-conversation.
+            This is what your clients will experience.
+          </p>
+          <a
+            href="/demo"
+            className="inline-flex items-center justify-center px-8 py-4 bg-[#d97706] text-[#020617] text-sm font-bold tracking-wide uppercase rounded-lg transition-all duration-300 hover:shadow-[0_0_30px_rgba(217,119,6,0.35)]"
+          >
+            Launch Live Demo
+          </a>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── FOOTER ─────────────────────────────────────────────── */
 function Footer() {
   return (
     <footer className="relative z-10 py-12 px-6 border-t border-white/5">
@@ -615,9 +852,11 @@ export default function Home() {
       <main className="relative z-10">
         <Navbar />
         <Hero />
-        <PrivacyWall />
-        <Offers />
-        <SocialProof />
+        <ProductLineup />
+        <SecurityFirst />
+        <Pricing />
+        <Founder />
+        <DemoCta />
         <Footer />
       </main>
     </>
