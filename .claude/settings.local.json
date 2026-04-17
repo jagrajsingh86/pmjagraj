@@ -3,7 +3,21 @@
     "allow": [
       "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --no-import-alias --use-npm)",
       "Bash(npm --version)",
-      "Bash(export PATH=\"/usr/local/bin:$PATH\")"
+      "Bash(export PATH=\"/usr/local/bin:$PATH\")",
+      "Bash(npm install:*)",
+      "Bash(npx next:*)",
+      "mcp__Claude_Preview__preview_start",
+      "Read(//usr/local/bin/**)",
+      "Bash(chmod +x \"/Users/jagraj-ai/Documents/Website Dev/pmjagraj/start-dev.sh\")",
+      "Bash(gh auth:*)",
+      "Bash(export PATH=\"/usr/local/bin:/opt/homebrew/bin:$PATH\")",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:jag-singh-ai-demo.vercel.app)",
+      "WebFetch(domain:jagsingh.ai)",
+      "Bash(/usr/local/bin/node node_modules/.bin/next dev --port 3001)",
+      "Bash(kill bc88cbzy2:*)",
+      "Bash(xargs -r kill)"
     ]
   }
 }

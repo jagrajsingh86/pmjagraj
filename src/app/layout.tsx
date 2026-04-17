@@ -8,13 +8,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Jag Singh AI | Secure AI Systems for the Private Enterprise",
+  title: "Jag Singh AI | Master the Architecture of Private AI",
   description:
-    "Automated Lead Qualification. Local Document Intelligence. Zero Data Leaks. Built for Sydney's High-Stakes Businesses.",
+    "Insights, Blueprints, and Community for leaders who build. The Private AI Pulse newsletter, a Resource Vault of digital blueprints, and a private LinkedIn circle for Sydney's AI architects.",
   openGraph: {
-    title: "Jag Singh AI | Secure AI Products",
+    title: "Jag Singh AI | The Private AI Resource Hub",
     description:
-      "SENTINEL. VAULT. REPLY. Three secure AI systems built for private enterprise.",
+      "The Private AI Pulse newsletter. Digital blueprints. A private community for builders.",
     type: "website",
     url: "https://jagsingh.ai",
   },
